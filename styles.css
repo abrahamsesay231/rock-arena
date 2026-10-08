@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Fredoka:wght@300..700&family=Lobster&family=Medula+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(5, 5, 34);
+}
+
+
+/* =========================
+   MAIN GAME
+========================= */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.game-board {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(5, 5, 34);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 75px;
+
+    padding: 0 2rem;
+
+    background-color: rgb(11, 11, 31);
+    color: #ccc;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.logo {
+    font-family: "Lobster", cursive;
+    font-size: 1.7rem;
+    color: #ffffff;
+}
+
+
+.right-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background-color: rgba(204, 204, 204, 0.2);
+}
+
+
+.menu-btn {
+    width: 45px;
+    height: 40px;
+
+    font-size: 1.2rem;
+
+    background-color: transparent;
+    border: none;
+
+    color: #ccc;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SCORE BOARD
+========================= */
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: min(600px, 90%);
+    min-height: 150px;
+
+    margin: 2rem auto 0;
+    padding: 1.5rem 2.5rem;
+
+    background-color: rgba(204, 204, 204, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+
+    color: #ccc;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.user-side,
+.computer-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+
+.user-info,
+.computer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+
+.user-Score,
+.computer-score {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+.user-side span:first-child,
+.computer-side span:first-child {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.vs {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================
+   WINNER NOTICE
+========================= */
+
+.winner-notice {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+    justify-self: center;
+    width: min(600px, 90%);
+    margin: 1.25rem auto 0;
+    padding: 1rem 1.25rem;
+    position: fixed;
+    z-index: 500;
+    color: #f4fff9;
+    background: linear-gradient(110deg, rgba(29, 120, 91, 0.28), rgba(204, 204, 204, 0.08));
+    border: 1px solid rgba(99, 230, 177, 0.42);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+
+.winner-icon {
+    display: grid;
+    flex: 0 0 42px;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: rgb(5, 35, 27);
+    background-color: #63e6b1;
+    border-radius: 50%;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+
+.winner-copy {
+    flex: 1;
+}
+
+
+.winner-label {
+    color: #8cefc5;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+.winner-copy h2 {
+    margin-top: 0.1rem;
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+
+.winner-message {
+    margin-top: 0.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+
+.winner-badge {
+    padding: 0.4rem 0.65rem;
+
+    color: #8cefc5;
+    background-color: rgba(99, 230, 177, 0.1);
+    border: 1px solid rgba(99, 230, 177, 0.25);
+    border-radius: 999px;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================
+   INPUT / BATTLE BOARD
+========================= */
+
+.input-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    width: min(600px, 90%);
+    min-height: 180px;
+
+    margin: 1.5rem auto 0;
+    padding: 1.5rem;
+
+    background-color: rgba(204, 204, 204, 0.08);
+
+    border-radius: 20px;
+
+    color: #ccc;
+
+    position: relative;
+}
+
+
+.user-selection,
+.computer-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 120px;
+
+    background-color: rgb(54, 56, 58);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+.user-selection img,
+.computer-selection img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+
+.computer-choice {
+    color: green;
+}
+
+
+/* =========================
+   CHOICE BUTTONS
+========================= */
+
+.choice-board {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1.5rem;
+
+    margin-top: 2rem;
+
+    position: relative;
+}
+
+
+.choice-board button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 110px;
+    height: 110px;
+
+    padding: 0;
+
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 18px;
+
+    background-color: rgb(40, 42, 55);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.choice-board button img {
+    width: 75%;
+    height: 75%;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.choice-board button:hover {
+    transform: translateY(-6px);
+
+    background-color: rgb(55, 58, 75);
+
+    border-color: rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Click */
+
+.choice-board button:active {
+    transform: translateY(-2px) scale(0.96);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 0 1rem;
+    }
+
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+
+    .score-board {
+        width: 90%;
+        padding: 1.2rem;
+
+        min-height: 130px;
+    }
+
+
+    .user-Score,
+    .computer-score {
+        font-size: 2.3rem;
+    }
+
+
+    .input-board {
+        width: 90%;
+
+        gap: 1.5rem;
+
+        min-height: 160px;
+    }
+
+
+    .winner-notice {
+        padding: 0.9rem;
+    }
+
+
+    .winner-copy h2 {
+        font-size: 1.05rem;
+    }
+
+
+    .user-selection,
+    .computer-selection {
+        width: 95px;
+        height: 95px;
+    }
+
+
+    .choice-board {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+
+    .choice-board button {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    .score-board {
+        padding: 1rem;
+    }
+
+
+    .user-info,
+    .computer-info {
+        gap: 0.4rem;
+    }
+
+
+    .user-Score,
+    .computer-score {
+        font-size: 2rem;
+    }
+
+
+    .input-board {
+        gap: 1rem;
+    }
+
+
+    .user-selection,
+    .computer-selection {
+        width: 100px;
+        height: 80px;
+    }
+
+
+    .choice-board {
+        gap: 0.6rem;
+    }
+
+
+    .choice-board button {
+        width: 80px;
+        height: 80px;
+        border-radius: 14px;
+    }
+}

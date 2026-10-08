@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
+        <!-- Basic Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <!-- Filled Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+    <!-- Brand Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Game Mode</title>
+</head>
+<body>
+    
+
+    <div class="conatainer">
+
+
+
+        <div class="game-board">
+
+            <div class="header">
+
+                <div class="logo">ROCK ARENA</div>
+
+               <div class="right-row">
+                 <div class="user-avatar">AD</div>
+
+                <button class="menu-btn"><i class="bx bx-menu"></i></button>
+               </div>
+               
+            </div>
+            
+
+            <div class="score-board">
+
+                <div class="user-side">
+                    <h4>You</h4>
+                    <p class="user-Score">0</p>
+
+                </div>
+
+                <h3 style="font-size:2em;">VS</h3>
+
+                <div class="computer-side">
+                    <h4>COMPUTER</h4>
+                    <p class="computer-score">0</p>
+
+                </div>
+
+
+            </div>
+
+            <section class="winner-notice" aria-labelledby="winner-title" role="status">
+                <div class="winner-icon" aria-hidden="true">!</div>
+                <div class="winner-copy">
+                    <p class="winner-label">ROUND WINNER</p>
+                    <h2 id="winner-title">You win this round!</h2>
+                    <p class="winner-message">Great move. Keep the momentum going!</p>
+                </div>
+                <span class="winner-badge">VICTORY</span>
+            </section>
+
+            <div class="input-board">
+
+                
+                <img class="user-selection" src="./ICONS/question mark.png" alt="./ICONS/rock image.png">
+                <img
+        class="computer-selection"
+        src="./ICONS/question mark.png"
+        alt="Computer choice"
+    >
+
+            </div>
+
+
+
+
+            <div class="choice-board">
+
+    <button class="choice-btn" data-choice="rock" 
+    data-image="./ICONS/rock image.png">
+        <img src="./ICONS/rock image.png" alt="Rock">
+    </button>
+
+    <button class="choice-btn" data-choice="paper"
+    data-image="./ICONS/paper image.png">
+        <img src="./ICONS/paper image.png" alt="Paper">
+    </button>
+
+    <button class="choice-btn" data-choice="scissors"
+    data-image="./ICONS/scissors image (1).png">
+        <img src="./ICONS/scissors image (1).png" alt="Scissors">
+    </button>
+
+</div>
+
+
+            
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <script src="./app.js"></script>
+</body>
+</html>
