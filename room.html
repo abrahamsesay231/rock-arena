@@ -14,7 +14,7 @@
     <!-- Brand Icons -->
     <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-    <title>Game Mode</title>
+    <title>Rock Arena | Match</title>
 </head>
 <body>
     
@@ -39,7 +39,9 @@
 
                 <button class="menu-btn"><i class="bx bx-menu"></i></button>
                 <button class="home-btn"><i class="bxf bx-home"></i></button>
-                <button class="info-btn"><i class="bx bx-message-bubble-question-mark"></i></button>
+                <button class="info-btn" type="button" aria-label="Game information">
+                    <i class="bx bx-message-bubble-question-mark" aria-hidden="true"></i>
+                </button>
                </div>
                
             </div>
@@ -119,6 +121,38 @@
             </div>
 
         </div>
+
+        <section class="info-board" id="infoBoard" aria-labelledby="info-title" aria-modal="true" role="dialog" hidden>
+            <button class="info-close-btn" type="button" aria-label="Close game information">&times;</button>
+            <p class="info-eyebrow">ROCK ARENA</p>
+            <h2 id="info-title">Game guide</h2>
+            <p class="info-intro">A quick guide to playing Rock, Paper, Scissors against the computer.</p>
+
+            <div class="info-section">
+                <h3>How to play</h3>
+                <ol>
+                    <li>Choose rock, paper, or scissors using the buttons on the game board.</li>
+                    <li>The computer makes a random choice at the same time.</li>
+                    <li>The winning choice earns one point. A tie earns no points.</li>
+                </ol>
+            </div>
+
+            <div class="info-section">
+                <h3>The rules</h3>
+                <ul>
+                    <li>Rock beats scissors.</li>
+                    <li>Scissors beats paper.</li>
+                    <li>Paper beats rock.</li>
+                </ul>
+            </div>
+
+            <p class="info-score-note">Your scores are saved in this browser, so they remain when you return to the game.</p>
+
+            <footer class="info-footer">
+                <span>Developed by</span>
+                <strong>Broski Tech</strong>
+            </footer>
+        </section>
             
 
         </div>
