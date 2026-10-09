@@ -26,9 +26,7 @@ function playGame() {
         const userChoice = choiceButton.dataset.choice;
         const userSelection = choiceButton.dataset.image;
         userSelectionInput.src = userSelection;
-        console.log(userSelectionInput)
-        console.log("User Choice:", userChoice);
-
+        
 
         // Computer choice
         const choices = ["rock", "paper", "scissors"];
@@ -44,13 +42,17 @@ function playGame() {
         
         computerSelectionInput.src = choiceImages[computerChoice];
         
-        console.log("Computer Choice:", computerChoice);
 
 
         // Game logic
         if (userChoice === computerChoice) {
 
-            alert("It's a tie!");
+            
+            
+
+                showNotice("Bro! It's a tie ");
+          
+         
 
         } else if (
 
@@ -67,7 +69,7 @@ function playGame() {
             userScore.textContent = userNewScore;
             
 
-            // alert("You won!");
+            showNotice("wow! you won this round");
 
         } else {
 
@@ -77,7 +79,7 @@ function playGame() {
 
             computerScore.textContent = computerNewScore;
             
-            // alert("You lost!");
+           showNotice("Haha! You lost this Round")
             
 
         }
@@ -88,3 +90,42 @@ function playGame() {
 
 
 playGame();
+
+
+
+// exit options 
+
+
+function showNotice(message){
+
+
+const exitBoard = document.querySelector(".exit-board");
+const homeBtn = document.querySelector(".home-btn");
+const overLay = document.getElementById("overLay");
+const exitBtn = document.querySelector(".exit-btn")
+const cancelBtn = document.querySelector(".cancel-btn");
+const boardMsg = document.querySelector(".board-msg");
+
+    
+    exitBoard.classList.add("show");
+    overLay.style.display = "block";
+
+    boardMsg.textContent = message;
+
+
+exitBoard.addEventListener("click", (event)=>{
+    if(event.target.classList.contains("exit-btn")){
+        window.location.href = "index.html";
+    }
+    else{
+        exitBoard.classList.remove("show")
+        overLay.style.display = "none";
+    }
+})
+
+
+}
+    
+
+
+
