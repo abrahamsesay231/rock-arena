@@ -3,6 +3,10 @@ const userScore = document.querySelector(".user-Score");
 const gameBoard = document.querySelector(".choice-board");
 const userSelectionInput = document.querySelector(".user-selection")
 const computerSelectionInput  = document.querySelector(".computer-selection");
+const infoButton = document.querySelector(".info-btn");
+const infoBoard = document.querySelector(".info-board");
+const infoCloseButton = document.querySelector(".info-close-btn");
+const overlay = document.getElementById("overLay");
 
 let userNewScore = Number(localStorage.getItem("userNewScore")) || 0;
 let computerNewScore = Number(localStorage.getItem("computerNewScore")) || 0;
@@ -91,6 +95,32 @@ function playGame() {
 
 playGame();
 
+infoButton.addEventListener("click", () => {
+    infoBoard.hidden = false;
+    overlay.style.display = "block";
+    infoCloseButton.focus();
+});
+
+infoCloseButton.addEventListener("click", closeInfoBoard);
+
+overlay.addEventListener("click", (event) => {
+    if (event.target === overlay && !infoBoard.hidden) {
+        closeInfoBoard();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !infoBoard.hidden) {
+        closeInfoBoard();
+    }
+});
+
+function closeInfoBoard() {
+    infoBoard.hidden = true;
+    overlay.style.display = document.querySelector(".exit-board.show") ? "block" : "none";
+    infoButton.focus();
+}
+
 
 
 // exit options 
@@ -126,6 +156,5 @@ exitBoard.addEventListener("click", (event)=>{
 
 }
     
-
 
 

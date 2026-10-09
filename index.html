@@ -2,13 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080822">
+    <meta name="description" content="Play Rock Arena, a quick game of Rock, Paper, Scissors against the computer.">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Rock Arena | Home</title>
 </head>
-<body>
-    
+<body class="home-page">
+    <header class="home-header">
+        <a class="home-logo" href="index.html" aria-label="Rock Arena home">ROCK <span>ARENA</span></a>
+        <a class="home-header-link" href="#how-to-play">How to play</a>
+    </header>
 
-    <a href="room.html">Play Game</a>
+    <main>
+        <section class="home-hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="home-eyebrow"><span aria-hidden="true"></span> YOUR NEXT QUICK MATCH</p>
+                <h1 id="hero-title">Ready to<br><span>make your move?</span></h1>
+                <p class="hero-description">Challenge the computer to the classic showdown. Pick your move, see what it throws, and climb the scoreboard.</p>
+                <a class="play-cta" href="room.html">
+                    Play now
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+                <p class="hero-note">Quick rounds. No sign-up. Just play.</p>
+            </div>
 
+            <div class="hero-art" aria-label="Rock, paper, and scissors choices">
+                <div class="hero-glow"></div>
+                <div class="hero-orbit hero-orbit-one"></div>
+                <div class="hero-orbit hero-orbit-two"></div>
+                <div class="hero-choice hero-choice-rock">
+                    <img src="./ICONS/rock image.png" alt="Rock">
+                </div>
+                <div class="hero-choice hero-choice-paper">
+                    <img src="./ICONS/paper image.png" alt="Paper">
+                </div>
+                <div class="hero-choice hero-choice-scissors">
+                    <img src="./ICONS/scissors image (1).png" alt="Scissors">
+                </div>
+                <span class="hero-spark hero-spark-one" aria-hidden="true">+</span>
+                <span class="hero-spark hero-spark-two" aria-hidden="true">✦</span>
+                <span class="hero-caption">CHOOSE YOUR<br>CHAMPION</span>
+            </div>
+        </section>
+
+        <section class="home-how-to" id="how-to-play" aria-labelledby="how-to-title">
+            <div class="how-to-heading">
+                <p class="home-eyebrow">EASY TO LEARN</p>
+                <h2 id="how-to-title">Three moves. One winner.</h2>
+            </div>
+            <div class="how-to-cards">
+                <article class="how-to-card">
+                    <span class="step-number">01</span>
+                    <h3>Pick your move</h3>
+                    <p>Choose rock, paper, or scissors to start the round.</p>
+                </article>
+                <article class="how-to-card">
+                    <span class="step-number">02</span>
+                    <h3>Face the computer</h3>
+                    <p>Your opponent makes a random choice. What will it be?</p>
+                </article>
+                <article class="how-to-card">
+                    <span class="step-number">03</span>
+                    <h3>Claim the point</h3>
+                    <p>Win the matchup and add a point to your score.</p>
+                </article>
+            </div>
+            <p class="home-rule"><strong>Remember:</strong> Rock beats scissors, scissors beats paper, and paper beats rock.</p>
+        </section>
+    </main>
+
+    <footer class="home-footer">
+        <span>ROCK ARENA</span>
+        <span>Developed by <strong>Broski Tech</strong></span>
+    </footer>
 </body>
 </html>
